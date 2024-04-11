@@ -169,6 +169,7 @@ cython_debug/
 **.terraform.lock.*
 **.tfvars
 **google_credentials.json
+**kaggle.json
 **logs/
 **.env
 **.venv
@@ -177,3 +178,34 @@ cython_debug/
 serving_dir
 .ipynb_checkpoints/
 .preferences.yaml
+
+# Docker specific files
+.bash_history
+.jupyter/
+.local/
+.npm/
+.python_history
+mage_ai/frontend/package-lock.json
+docker-compose.override.yml
+
+# DB files
+*.db
+
+# Terraform files
+**/.terraform*
+*.tfstate*
+*.zip
+
+# vscode
+.vscode/
+
+# front-end
+node_modules
+.npmrc
+
+# Scratch files
+*scratch*
+/mage_data*
+*secrets*.json
+.env
+your-first-project
