@@ -73,7 +73,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-04-13 14:25:55'
+updated_at: '2024-04-13 14:39:15'
 uuid: opeaq_gcs_to_bq
 variables_dir: /home/src/mage_data/mage-dbt
 widgets: []
