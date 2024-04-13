@@ -5,14 +5,13 @@ import requests
 from requests.exceptions import RetryError
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
-from mage_ai.data_preparation.shared.secrets import get_secret_value
 
 if "data_loader" not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if "test" not in globals():
     from mage_ai.data_preparation.decorators import test
 
-API_KEY = get_secret_value("OPENAQ_API_KEY")
+API_KEY = os.environ.get("OPENAQ_API_KEY")
 LOCATIONS_URL = "https://api.openaq.org/v2/locations?limit=100&page=1&offset=0&sort=desc&radius=1000&city=Madrid&order_by=lastUpdated&dump_raw=false"
 PARAMETERS_URL = "https://api.openaq.org/v2/parameters?limit=100&page=1&offset=0&sort=asc&order_by=id"
 START_DATE = "2019-01-01T00%3A00%3A00%2B00%3A00"
