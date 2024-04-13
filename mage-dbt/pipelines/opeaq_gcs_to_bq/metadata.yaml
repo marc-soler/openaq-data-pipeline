@@ -37,8 +37,13 @@ blocks:
   configuration:
     dbt:
       command: run
+    dbt_profile_target: ''
+    dbt_project_name: dbt/openaq
+    disable_query_preprocessing: false
+    export_write_policy: append
     file_source:
       path: dbts/openaq_dbt_transformation.yaml
+    use_raw_sql: false
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -73,7 +78,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-04-13 14:39:15'
+updated_at: '2024-04-13 14:42:20'
 uuid: opeaq_gcs_to_bq
 variables_dir: /home/src/mage_data/mage-dbt
 widgets: []
