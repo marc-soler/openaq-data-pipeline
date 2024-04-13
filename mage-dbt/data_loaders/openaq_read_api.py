@@ -151,8 +151,11 @@ def load_data_from_api(*args, **kwargs):
     df_locations, locations_list = get_locations(session)
     df_parameters = get_parameters(session)
     df_measurements = get_measurements(session, locations_list)
+    df = df_measurements.merge(df_locations, on="location_id").merge(
+        df_parameters, on="parameter_id"
+    )
 
-    return df_locations, df_parameters, df_measurements
+    return df
 
 
 @test
