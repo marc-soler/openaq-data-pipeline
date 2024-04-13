@@ -1,16 +1,16 @@
 version: '3'
 services:
-  traffic-collision:
+  openaq:
     image: mageai/mageai:latest
-    container_name: traffic-collision
-    command: mage start ${MAGE_PROJECT_NAME}
+    container_name: openaq
+    command: mage start mage-dbt
     env_file:
       - .env
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      USER_CODE_PATH: /home/src/${MAGE_PROJECT_NAME}
+      USER_CODE_PATH: /home/src/openaq/
     ports:
       - 6789:6789
     volumes:

@@ -7,11 +7,18 @@ default:
   AWS_SECRET_ACCESS_KEY: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
   AWS_SESSION_TOKEN: session_token (Used to generate Redshift credentials)
   AWS_REGION: region
+  # Algolia
+  ALGOLIA_APP_ID: app_id
+  ALGOLIA_API_KEY: api_key
+  ALGOLIA_INDEX_NAME: index_name
   # Azure
   AZURE_CLIENT_ID: "{{ env_var('AZURE_CLIENT_ID') }}"
   AZURE_CLIENT_SECRET: "{{ env_var('AZURE_CLIENT_SECRET') }}"
   AZURE_STORAGE_ACCOUNT_NAME: "{{ env_var('AZURE_STORAGE_ACCOUNT_NAME') }}"
   AZURE_TENANT_ID: "{{ env_var('AZURE_TENANT_ID') }}"
+  # Chroma
+  CHROMA_COLLECTION: collection_name
+  CHROMA_PATH: path
   # Clickhouse
   CLICKHOUSE_DATABASE: default
   CLICKHOUSE_HOST: host.docker.internal
@@ -26,6 +33,9 @@ default:
   DRUID_PORT: 8082
   DRUID_SCHEME: http
   DRUID_USER: user
+  # DuckDB
+  DUCKDB_DATABASE: database
+  DUCKDB_SCHEMA: main
   # Google
   GOOGLE_SERVICE_ACC_KEY:
     type: service_account
@@ -62,14 +72,24 @@ default:
   MYSQL_PASSWORD: password
   MYSQL_PORT: 3306
   MYSQL_USER: root
+  # Pinot
+  PINOT_HOST: hostname
+  PINOT_PASSWORD: password
+  PINOT_PATH: /query/sql
+  PINOT_PORT: 8000
+  PINOT_SCHEME: http
+  PINOT_USER: user
   # PostgresSQL
   POSTGRES_CONNECT_TIMEOUT: 10
-  POSTGRES_DBNAME: "{{ env_var('POSTGRES_DB') }}"
-  POSTGRES_SCHEMA: "{{ env_var('POSTGRES_SCHEMA') }}"
-  POSTGRES_USER: "{{ env_var('POSTGRES_USER') }}"
-  POSTGRES_PASSWORD: "{{ env_var('POSTGRES_PASSWORD') }}"
-  POSTGRES_HOST: "{{ env_var('PG_HOST') }}"
+  POSTGRES_DBNAME: postgres
+  POSTGRES_SCHEMA: public # Optional
+  POSTGRES_USER: username
+  POSTGRES_PASSWORD: password
+  POSTGRES_HOST: hostname
   POSTGRES_PORT: 5432
+  # Qdrant
+  QDRANT_COLLECTION: collection
+  QDRANT_PATH: path
   # Redshift
   REDSHIFT_SCHEMA: public # Optional
   REDSHIFT_DBNAME: redshift_db_name
@@ -107,3 +127,8 @@ default:
     source: trino-cli                         # Optional
     user: admin
     verify: /path/to/your/ca.crt              # Optional
+  # Weaviate
+  WEAVIATE_ENDPOINT: https://some-endpoint.weaviate.network
+  WEAVIATE_INSTANCE_API_KEY: YOUR-WEAVIATE-API-KEY
+  WEAVIATE_INFERENCE_API_KEY: YOUR-OPENAI-API-KEY
+  WEAVIATE_COLLECTION: collectionn_name

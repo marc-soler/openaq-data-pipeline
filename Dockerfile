@@ -1,6 +1,6 @@
 FROM mageai/mageai:latest
 
-ARG USER_CODE_PATH=/home/src/${PROJECT_NAME}
+ARG USER_CODE_PATH=/home/src/openaq/
 
 COPY requirements.txt ${USER_CODE_PATH}requirements.txt 
 
