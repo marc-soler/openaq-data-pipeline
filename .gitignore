@@ -162,6 +162,7 @@ cython_debug/
 # Miscellaneous
 .DS_Store
 .idea
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -191,11 +192,6 @@ docker-compose.override.yml
 # DB files
 *.db
 
-# Terraform files
-**/.terraform*
-*.tfstate*
-*.zip
-
 # vscode
 .vscode/
 
@@ -207,5 +203,3 @@ node_modules
 *scratch*
 /mage_data*
 *secrets*.json
-.env
-your-first-project

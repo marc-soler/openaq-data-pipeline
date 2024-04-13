@@ -43,7 +43,7 @@ variable "gcs_storage_class" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset Name"
-  default     = "traffic_collision"
+  default     = "traffic-collision"
 }
 
 variable "repository" {
