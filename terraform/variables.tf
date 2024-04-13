@@ -1,7 +1,7 @@
 variable "app_name" {
   type        = string
   description = "Application Name"
-  default     = "traffic-collision"
+  default     = "openaq"
 }
 
 variable "container_cpu" {
@@ -33,7 +33,7 @@ variable "zone" {
 
 variable "gcs_bucket_name" {
   description = "My Storage Bucket Name"
-  default     = "traffic-collision-bucket"
+  default     = "openaq-bucket"
 }
 
 variable "gcs_storage_class" {
@@ -43,13 +43,13 @@ variable "gcs_storage_class" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset Name"
-  default     = "traffic-collision"
+  default     = "openaq"
 }
 
 variable "repository" {
   type        = string
   description = "The name of the Artifact Registry repository to be created"
-  default     = "traffic-collision"
+  default     = "openaq"
 }
 
 variable "database_user" {

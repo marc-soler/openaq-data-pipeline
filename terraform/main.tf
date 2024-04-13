@@ -65,7 +65,7 @@ resource "google_project_service" "sqladmin" {
 # #               Resources                   #
 # #############################################
 # GCS Bucket
-resource "google_storage_bucket" "traffic_collision_bucket" {
+resource "google_storage_bucket" "openaq_bucket" {
   name                        = var.gcs_bucket_name
   location                    = var.region
   storage_class               = var.gcs_storage_class
@@ -88,7 +88,7 @@ resource "google_storage_bucket" "traffic_collision_bucket" {
 }
 
 # BigQuery Dataset
-resource "google_bigquery_dataset" "traffic_collision_dataset" {
+resource "google_bigquery_dataset" "openaq_dataset" {
   dataset_id = var.bq_dataset_name
   project    = var.project_id
   location   = var.region
