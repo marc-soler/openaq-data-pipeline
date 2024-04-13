@@ -12,12 +12,12 @@ blocks:
   language: python
   name: openaq_read_api
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: openaq_read_api
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks: []
@@ -27,7 +27,7 @@ blocks:
   language: python
   name: openaq_parquet_to_gcs
   retry_config: null
-  status: updated
+  status: failed
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -54,7 +54,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-04-13 12:55:25'
+updated_at: '2024-04-13 13:16:19'
 uuid: openaq_api_to_gcs
 variables_dir: /home/src/mage_data/mage-dbt
 widgets: []
