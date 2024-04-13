@@ -38,7 +38,6 @@ default:
   DUCKDB_SCHEMA: main
   # Google
   GOOGLE_SERVICE_ACC_KEY_FILEPATH: "{{ env_var('GCP_CREDENTIALS') }}"
-  GOOGLE_LOCATION: US # Optional
   # MongoDB
   # Specify either the connection string or the (host, password, user, port) to connect to MongoDB.
   MONGODB_CONNECTION_STRING: "mongodb://{username}:{password}@{host}:{port}/"
