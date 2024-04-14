@@ -1,21 +1,33 @@
 
 version: 2
 
-models:
-  - name: stg
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+sources:
+  - name: staging
+    database: "{{ env_var('GCP_PROJECT_ID') }}"
+    schema: "{{ env_var('BIGQUERY_DATASET') }}"
+    tables:
+      - name: "{{ env_var('BIGQUERY_TABLE') }}"
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+models:
+  - name: stg_openaq_measurements
+    description: >
+      OpenAQ is a nonprofit organization providing universal access to air quality data to empower a 
+      global community of changemakers to solve air inequality—the unequal access to clean air.
     columns:
-      - name: id
+      - name: measurement_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
+      - name: location_id
+        description: "Location secondary key"
+        tests:
+           - accepted_values:
+                values: "{{ var('locations') }}"
+                severity: warn
+      - name: parameter_id
+        description: "Parameter seconday key"
+      - name: measurement_average
+        description: ""
+      - name: measurement_count
+        description: ""

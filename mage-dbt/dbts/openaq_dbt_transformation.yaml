@@ -1,1 +1,0 @@
---select dbt/models/* --vars '{"is_test_run": true}'

@@ -139,7 +139,8 @@ def get_measurements(session, locations_list):
 
             page += 1
 
-    df_measurements = df_measurements.reset_index(drop=True)
+    df_measurements = df_measurements.reset_index()
+    df_measurements = df_measurements.rename(columns={'index': 'measurement_id'})
     df_measurements["timestamp"] = pd.to_datetime(df_measurements["timestamp"])
 
     return df_measurements

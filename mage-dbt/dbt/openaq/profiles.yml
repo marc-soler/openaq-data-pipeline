@@ -1,10 +1,13 @@
-openaq:
+OpenAQ:
   target: dev
   outputs:
     dev:
       type: bigquery
       method: service-account
       project: "{{ env_var('GCP_PROJECT_ID') }}"
+      # project: linen-walker-412417
       dataset: "{{ env_var('BIGQUERY_DATASET') }}"
+      # dataset: openaq
       threads: 4
       keyfile: "{{ env_var('GCP_CREDENTIALS') }}"
+      # keyfile: "/home/src/google_credentials.json"
