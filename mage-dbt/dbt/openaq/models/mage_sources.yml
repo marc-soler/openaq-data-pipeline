@@ -1,0 +1,14 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_OpenAQ
+  schema: openaq
+  tables:
+  - description: Dataframe for block `openaq_data_to_bq` of the `opeaq_gcs_to_bq`
+      mage pipeline.
+    identifier: mage_opeaq_gcs_to_bq_openaq_data_to_bq
+    meta:
+      block_uuid: openaq_data_to_bq
+      pipeline_uuid: opeaq_gcs_to_bq
+    name: opeaq_gcs_to_bq_openaq_data_to_bq
+version: 2

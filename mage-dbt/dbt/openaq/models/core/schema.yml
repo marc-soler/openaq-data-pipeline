@@ -2,17 +2,17 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: stg
     database: "{{ env_var('GCP_PROJECT_ID') }}"
     schema: "{{ env_var('BIGQUERY_DATASET') }}"
     tables:
-      - name: "{{ env_var('BIGQUERY_TABLE') }}"
+      - name: stg_openaq_measurements
+      - name: stg_openaq_locations
+      - name: stg_openaq_parameters
 
 models:
-  - name: stg_openaq_measurements
-    description: >
-      OpenAQ is a nonprofit organization providing universal access to air quality data to empower a 
-      global community of changemakers to solve air inequality—the unequal access to clean air.
+  - name: fact_measurements
+    description: Fact table containing unique measurements. Can be joined with dim_locations, and dim_parameters.
     columns:
       - name: measurement_id
         description: "The primary key for this table"
@@ -31,8 +31,8 @@ models:
         description: ""
       - name: measurement_count
         description: ""
-  - name: stg_openaq_locations
-    description: Staging table containing information about the measurement stations' location and coordinates.
+  - name: dim_locations
+    description: Dimensional table containing information about the measurement stations' location and coordinates.
     columns:
       - name: location_id
         description: "The primary key for this table"
@@ -49,8 +49,8 @@ models:
         description: ""
       - name: longitude
         description: ""
-  - name: stg_openaq_parameters
-    description: Staging table containing information about the parameters that are measured in the stations.
+  - name: dim_parameters
+    description: Dimensional table containing information about the parameters that are measured in the stations.
     columns:
       - name: parameter_id
         description: "The primary key for this table"

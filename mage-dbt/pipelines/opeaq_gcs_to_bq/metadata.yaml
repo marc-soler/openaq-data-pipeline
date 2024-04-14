@@ -18,7 +18,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - run_dbt_models_openaq
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -31,6 +32,31 @@ blocks:
   upstream_blocks:
   - openaq_data_from_gcs
   uuid: openaq_data_to_bq
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: run
+    dbt_profile_target: null
+    dbt_project_name: dbt/OpenAQ
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/run_dbt_models_openaq.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: run_dbt_models_openaq
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - openaq_data_to_bq
+  uuid: run_dbt_models_openaq
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -52,7 +78,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-04-14 07:40:28'
+updated_at: '2024-04-14 10:49:01'
 uuid: opeaq_gcs_to_bq
 variables_dir: /home/src/mage_data/mage-dbt
 widgets: []
