@@ -6,7 +6,7 @@ with
         select * from {{ source("raw", "openaq_data_2019_2024") }}
     ),
     stg_openaq_locations as (
-        select
+        select distinct
             cast(location_id as int) as location_id,
             location_name,
             country,

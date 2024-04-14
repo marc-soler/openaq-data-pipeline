@@ -4,16 +4,16 @@
 Welcome to the Open Air Quality project! This project focuses on creating a data pipeline to explore air quality data in Madrid, Spain. It is the capstone project of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) course.
 
 ## Overview
-This project consists of an ETL (extraction, loading and transforming) data pipeline from an API to Google BigQuery, also storing the data in Google Cloud Storage (GCS). The data in BigQuery is modeled using DBT (Data Build Tool), and is then visualised using Metabase.
+This project consists of an ETL (extraction, loading and transforming) data pipeline from an API to Google BigQuery, also storing the data in Google Cloud Storage (GCS). The data in BigQuery is modelled using DBT (Data Build Tool), and is then visualized using Metabase.
 
 ## Problem statement
 Despite efforts to monitor and regulate air quality in Madrid, there remains a significant challenge in accurately predicting and mitigating pollution hotspots. This project aims to leverage data from the Open Air Quality initiative to develop a comprehensive understanding of the spatial and temporal distribution of air pollutants in Madrid.
 To conduct appropriate data analysis, an analytics platform with reliable, consistent, and structured data is needed. To provide such data infrastructure and flow is the objective of this project.
 
 ## The dataset
-The Open Air Quality project is an initiative focused on monitoring and improving air quality. It involves the deployment of sensors in various locations to collect data on pollutants such as particulate matter, ozone, nitrogen dioxide, and sulfur dioxide. This data is then analyzed to understand patterns, identify sources of pollution, and develop strategies to address air quality issues. Open Air Quality projects are often community-driven, involving collaboration between citizens, scientists, and policymakers to raise awareness and take action to improve air quality in their local areas.
+The Open Air Quality project is an initiative focused on monitoring and improving air quality. It involves the deployment of sensors in various locations to collect data on pollutants such as particulate matter, ozone, nitrogen dioxide, and sulphur dioxide. This data is then analysed to understand patterns, identify sources of pollution, and develop strategies to address air quality issues. Open Air Quality projects are often community-driven, involving collaboration between citizens, scientists, and policymakers to raise awareness and take action to improve air quality in their local areas.
 
-The dataset used is extracted directly from the official Open Air Quality API, and it contains air quality meaurements data spanning from 2019 to 2024 from Madrid, Spain. Each measurement is linked to an air quality sensor via coordinates, and is provided with information about the pollutant it measures. More information can be found in the [API documentation](https://docs.openaq.org/docs/getting-started).
+The dataset used is extracted directly from the official Open Air Quality API, and it contains air quality measurements data spanning from 2019 to 2024 from Madrid, Spain. Each measurement is linked to an air quality sensor via coordinates, and is provided with information about the pollutant it measures. More information can be found in the [API documentation](https://docs.openaq.org/docs/getting-started).
 
 ## The project 
 ### Technologies Used
@@ -31,15 +31,15 @@ The dataset used is extracted directly from the official Open Air Quality API, a
 ### Workflow
 1. **Cloud Infrastructure Deployment**: The project commences by orchestrating the requisite infrastructure setup via Terraform's Infrastructure as Code (IaC) solution. This ensures a streamlined and reproducible deployment process, facilitating version control, scalability and manageability.
 
-2. **Data Extraction and Loading to GCS**: This phase involves acquiring the data from the Open Air Quality API, followed by necessary processing. The data is then converted from JSON to Parquet, a format that optimizes storage efficiency, and enablies seamless ingestion into Google Cloud Storage (GCS).
+2. **Data Extraction and Loading to GCS**: This phase involves acquiring the data from the Open Air Quality API, followed by necessary processing. The data is then converted from JSON to Parquet, a format that optimizes storage efficiency, and enables seamless ingestion into Google Cloud Storage (GCS).
 
-3. **Data Ingestion into BigQuery**: Subsequently, the data housed within GCS is ingested into BigQuery, a data warehousing solution. This allows the data to be queried and analised. Furthermore, data is organised in tables optimised for fast and optimal retrieval.
+3. **Data Ingestion into BigQuery**: Subsequently, the data housed within GCS is ingested into BigQuery, a data warehousing solution. This allows the data to be queried and analysed. Furthermore, data is organized in tables optimized for fast and optimal retrieval.
 
-4. **Data Modeling with DBT**: Leveraging DBT (Data Build Tool), comprehensive data transformation and modeling was made. This involves tasks such as data cleansing, removing sparse entries, and applying business logic to refine the dataset for analysis.
+4. **Data Modelling with DBT**: Leveraging DBT (Data Build Tool), comprehensive data transformation and modelling was made. This involves tasks such as data cleansing, removing sparse entries, and applying business logic to refine the dataset for analysis.
 
 5. **Data Visualization with Metabase**: Finally, the transformed data in BigQuery is visualized using Metabase. This platform seamlessly integrates with BigQuery, allowing stakeholders to derive actionable insights through intuitive data exploration and reporting capabilities.
 
-This flow can be better visualised with a diagram:
+This flow can be better visualized with a diagram:
 
 ![Workflow diagram](./images/workflow_diagram.png)
 
@@ -71,9 +71,9 @@ To use this project, the first step is to fork and/or clone this repository to y
 1. Delete the "-example" suffix of the .env file, and fill in the variables:
 - OPENAQ_API_KEY: The API key you generated in the previous step.
 - GCP_CREDENTIALS: The path is already filled in.
-- GCP_PROJECT_ID: Id of the GCP project you just initialised.
+- GCP_PROJECT_ID: Id of the GCP project you just initialized.
 2. Navigate to the "terraform" folder, delete the "-example" suffix from terraform.tfvars, and fill in the variable:
-- project_id: Id of the GCP project you just initialised.
+- project_id: Id of the GCP project you just initialized.
 
 ### Environment prerequisites
 - [Terraform](https://developer.hashicorp.com/terraform/install)
@@ -126,7 +126,7 @@ The easiest way to launch Metabase is by using Docker. First, we need to pull th
 docker pull metabase/metabase:latest
 ```
 
-Then, we will intialise a container with that image, that will forward its interface to port 3000 (by default):
+Then, we will intialize a container with that image, that will forward its interface to port 3000 (by default):
 ```bash
 docker run -d -p 3000:3000 --name metabase metabase/metabase
 ```

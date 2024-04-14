@@ -6,7 +6,7 @@ with
         select * from {{ source("raw", "openaq_data_2019_2024") }}
     ),
     stg_openaq_parameters as (
-        select
+        select distinct
             cast(parameter_id as int) as parameter_id,
             parameter_code,
             parameter_name,
