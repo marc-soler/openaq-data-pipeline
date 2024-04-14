@@ -11,4 +11,11 @@ sources:
       block_uuid: openaq_data_to_bq
       pipeline_uuid: opeaq_gcs_to_bq
     name: opeaq_gcs_to_bq_openaq_data_to_bq
+  - description: Dataframe for block `openaq_data_to_bq` of the `openaq_gcs_to_bq`
+      mage pipeline.
+    identifier: mage_openaq_gcs_to_bq_openaq_data_to_bq
+    meta:
+      block_uuid: openaq_data_to_bq
+      pipeline_uuid: openaq_gcs_to_bq
+    name: openaq_gcs_to_bq_openaq_data_to_bq
 version: 2

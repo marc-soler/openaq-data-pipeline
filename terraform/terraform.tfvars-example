@@ -1,1 +1,4 @@
 project_id = "your-gcp-project-id"
+gcs_bucket_name = "openaq-bucket"
+bq_dataset_name = "openaq"
+repository      = "openaq"

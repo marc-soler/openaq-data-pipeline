@@ -203,3 +203,4 @@ node_modules
 *scratch*
 /mage_data*
 *secrets*.json
+/dbt_packages*
